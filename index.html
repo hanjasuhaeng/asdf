@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    .nav {
+      width: 20%;
+      height: 800px;
+    }
+    .content {
+      width: 75%;
+      height: 800px;
+    }
+    .content * {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    body {
+      background-color: skyblue;
+    }
+    h1 {
+      font-size: 200px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 30px;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    li {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    li:hover {
+      text-decoration: underline;
+      color: navy;
+      transform: translateY(-2px);
+      transition: 0.4s;
+    }
+    li:active {
+      color: blue;
+      transition: 0s;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 2px solid black;
+      padding: 4px;
+    }
+    div {
+      float: left;
+      border: 2px solid black;
+      margin: 4px;
+      padding: 4px;
+    }
+  </style>
+  <script>
+    // 내가 과거에 짠 코드는 정체가 뭘까
+    function pageChange(n) {
+      let pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'];
+
+      // 보여라 얍
+      const elementAppear = document.getElementsByClassName(pages[n - 1]);
+      for (let i = 0; i < elementAppear.length; i++) {
+        elementAppear[i].style.display = 'block';
+      }
+      
+      // 사라져라 얍
+      for (let i = 0; i < pages.length; i++) {
+        if (i !== n - 1) {
+          const elementDisappear = document.getElementsByClassName(pages[i]);
+          for (let j = 0; j < elementDisappear.length; j++) {
+            elementDisappear[j].style.display = 'none';
+          }
+        }
+      }
+    }
+
+    window.onload = function() {
+      pageChange(1);
+    }
+  </script>
+</head>
+<body>
+  <div class="nav">
+    <ol>
+      <li onclick="pageChange(1)">처음</li>
+      <li onclick="pageChange(2)">중간</li>
+      <ol>
+        <li onclick="pageChange(2)">나의 진로</li>
+        <li onclick="pageChange(3)">나의 진로를 선택하게 된 계기</li>
+        <li onclick="pageChange(4)">신문기사에서 롤모델이나 최신동향 등</li>
+        <li onclick="pageChange(5)">나의 앞으로의 다짐</li>
+      </ol>
+      <li onclick="pageChange(6)">끝</li>
+    </ol>
+  </div>
+  <div class="content">
+    <h1 class="page1" style="margin-top: 100px;">학급특색활동 발표</h1>
+    <h2 class="page1">20723 정규민</h2>
+    <h2 class="page2">나의 진로는 프로그래머이다. 아래는 프로그래머의 소개이다.<br>프로그래머는 컴퓨터 프로그램을 설계, 작성, 테스트 및 유지 보수하는 전문가입니다. 이들은 사용자 요구를 분석하고 이를 소프트웨어 솔루션으로 구현하며, 효율적이고 오류 없는 코드를 작성하는 데 중점을 둡니다. 다양한 도구와 협업을 통해 소프트웨어 프로젝트를 성공적으로 완료하는 역할을 합니다.</h2>
+    <h2 class="page3">내가 진로를 선택하게 된 계기는 프로그래밍은 재밌는 데다가 연봉도 높기 떄문이다.</h2>
+    <a class="page4" href="https://www.google.com/search?q=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EA%B8%B0%EC%82%AC&sca_esv=8a43c4591a19e45c&hl=ko&source=hp&ei=VdlVZs-nJfyo2roPro2m8A4&iflsig=AL9hbdgAAAAAZlXnZZaHxr_ur2tE48s6_K6V9ShP3d3Z&udm=&ved=0ahUKEwiPpoqct7CGAxV8lFYBHa6GCe4Q4dUDCBc&uact=5&oq=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EA%B8%B0%EC%82%AC&gs_lp=Egdnd3Mtd2l6IhbtlITroZzqt7jrnpjrsI0g6riw7IKsMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEi-EVAAWK4QcAR4AJABBJgB3wGgAccRqgEGMS4xNS4xuAEDyAEA-AEBmAILoAKyB8ICBBAuGAPCAggQABiABBixA8ICCBAuGIAEGLEDwgILEAAYgAQYsQMYgwHCAgsQLhiABBixAxiDAcICBBAAGAPCAg4QLhiABBixAxiDARjUApgDAJIHBTUuNS4xoAf5fg&sclient=gws-wiz">프로그래밍 관련 기사 싸이트</a>
+    <h2 class="page5">열심히 공부를 하여서 좋은 프로그래머가 되어야 겠다.</h2>
+    <h1 class="page6" style="margin-top: 100px;">감사합니다.</h1>
+    <h2 class="page6">10425 정규민</h2>
+  </div>
+</body>
+</html>
